@@ -6,13 +6,15 @@
         </div>
         <div class="bg-dark p-2 nav-style ">
             <ul class="nav">
-                <li class="nav-item">
-                 <RouterLink  class="nav-link text-light" to="/">Homes</RouterLink>
+               <li class="nav-item">
+                 <RouterLink  class="nav-link text-light" to="/">Home</RouterLink>
                 </li>
                 <li class="nav-item">
-                  <RouterLink  class="nav-link text-light" to="/fleets">Airline Fleets</RouterLink>
+                 <RouterLink  class="nav-link text-light" to="/administrator">Dashboard</RouterLink>
                 </li>
-                
+                <li class="nav-item" >
+                  <RouterLink  class="nav-link text-light" to="/fleets">Units</RouterLink>
+                </li>
             </ul>
         </div>
         
@@ -20,6 +22,7 @@
       </div>
 </template>
 <script setup>
+import Dashboard from '@/views/admin/Dashboard.vue'
 </script>
 <style scoped>
 .nav-style {

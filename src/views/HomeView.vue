@@ -3,6 +3,7 @@ import Nav from '../components/Nav.vue'
 import About from '../components/About.vue'
 import Jets from '../components/Jets.vue'
 import Consul from '../components/Consultation.vue'
+const showbutton = 1
 </script>
 
 <template>
@@ -17,7 +18,15 @@ import Consul from '../components/Consultation.vue'
     </div>
   </div>
   <About />
-  <Jets />
+  <section class="container py-5">
+        <div class="container-fluid">
+           <div class="d-flex flex-column justify-content-center align-items-center text-center" >
+                <h1>Our Jets</h1>
+                <p style="width:80%">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero ducimus enim minus, explicabo voluptates laborum ex, eaque dolorem, et reprehenderit nostrum laudantium ratione quisquam. Laudantium quasi reiciendis cupiditate consequuntur expedita.</p>
+           </div>
+          <Jets :showbutton="showbutton" />
+         </div>
+    </section>  
   <Consul />
 </template>
 <style>
@@ -49,5 +58,9 @@ import Consul from '../components/Consultation.vue'
 }
 .card{
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+RouterLink{
+  text-decoration: none;
+  color: black;
 }
 </style>
