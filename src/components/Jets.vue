@@ -1,21 +1,10 @@
 <template>
     <section class="container py-5">
         <div class="container-fluid">
-           
            <div class="row py-3 g-3">
-                <div class="col-sm-4">
-                    <div class="card card-image d-flex justify-content-center align-items-center"  :style="{ backgroundImage: `url(${jet1})` }">
-                        <h4 class="text-light">Gulfstream500</h4>
-                    </div>        
-                </div>
-                <div class="col-sm-4">
-                    <div class="card card-image d-flex justify-content-center align-items-center" :style="{ backgroundImage: `url(${jet1})` }">
-                        <h4 class="text-light">Gulfstream500</h4>
-                    </div>        
-                </div>
-                <div class="col-sm-4">
-                    <div class="card card-image d-flex justify-content-center align-items-center" :style="{ backgroundImage: `url(${jet1})` }">
-                        <h4 class="text-light">Gulfstream500</h4>
+                <div class="col-sm-4" v-for="(jet,id) in airline.units.slice(0,shows())" :key="id" @click="$router.push({ name:'JetsDetails', params:{id:jet.id} })">
+                    <div class="card card-image d-flex justify-content-center align-items-center"  :style="{ backgroundImage: `url(${jet.image})` }">
+                        <h4 class="text-light">{{jet.name_unit}}</h4>
                     </div>        
                 </div>
            </div>
@@ -31,7 +20,12 @@
 <script setup>
 import Jets from '@/components/Jets.vue'
 import jet1 from '../assets/gulf1.jpg'
-const props = defineProps(['showbutton'])
+const props = defineProps(['showbutton', 'airline'])
+const shows = ()=>{
+    if(props.showbutton == 1){
+        return  3
+    }
+}
 </script>
 <style scoped>
 .card-image {

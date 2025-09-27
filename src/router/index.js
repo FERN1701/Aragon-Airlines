@@ -5,6 +5,7 @@ import Jets from '../views/Jets/JetsView.vue'
 import JetDescription from '../views/Jets/JetDescription.vue'
 import Admin from '../views/admin/AdminLayout.vue'
 import Dashboard from '../views/admin/Dashboard.vue'
+import Units from '../views/admin/Units.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -25,8 +26,8 @@ const router = createRouter({
         component: Jets,
         },
         {
-        path: 'details', 
-        name: 'Jetsdetails',
+        path: ':id/details', 
+        name: 'JetsDetails',
         component: JetDescription,
         },
       ]
@@ -40,6 +41,11 @@ const router = createRouter({
         path: '', 
         name: 'Jetsdetails',
         component: Dashboard,
+        },
+        {
+        path: 'units', 
+        name: 'units',
+        component: Units,
         },
       ]
     },

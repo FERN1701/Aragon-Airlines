@@ -2,10 +2,11 @@
 <section class="container py-5">
     <div class="container-fluid">
         <h1>Description</h1>
+        <h6>Name : {{jet.name_unit}}</h6>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique, delectus fugit numquam possimus odio suscipit odit vitae ipsam veniam asperiores perspiciatis, porro illo, laborum dicta consequatur minus debitis officiis. Impedit?</p>
         <div class="row py-5">
             <div class="col-sm-6 mb-5">
-                <img src="https://assets.gulfstream.aero/thedotcom/images/aircraft/g400/lip_20220426_fashion_0087.jpg" alt="" class="img-fluid">
+                <img :src="jet.image" alt="" class="img-fluid">
             </div>
             <div class="col-sm-6">
                 <h5>Cabin Space</h5>
@@ -17,4 +18,11 @@
 </section>
 </template>
 <script setup>
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
+import { airlineStore } from '../../stores/control';
+
+const route = useRoute()           // ✅ you need this
+const airline = airlineStore()
+const jet = computed(() => airline.getAirline(route.params.id))
 </script>

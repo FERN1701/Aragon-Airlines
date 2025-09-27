@@ -13,7 +13,7 @@
                  <RouterLink  class="nav-link text-light" to="/administrator">Dashboard</RouterLink>
                 </li>
                 <li class="nav-item" >
-                  <RouterLink  class="nav-link text-light" to="/fleets">Units</RouterLink>
+                  <RouterLink  class="nav-link text-light" to="/administrator/units">Units</RouterLink>
                 </li>
             </ul>
         </div>

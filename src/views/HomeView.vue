@@ -4,6 +4,8 @@ import About from '../components/About.vue'
 import Jets from '../components/Jets.vue'
 import Consul from '../components/Consultation.vue'
 const showbutton = 1
+import  { airlineStore } from '../stores/control'
+const airline = airlineStore()
 </script>
 
 <template>
@@ -24,7 +26,7 @@ const showbutton = 1
                 <h1>Our Jets</h1>
                 <p style="width:80%">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero ducimus enim minus, explicabo voluptates laborum ex, eaque dolorem, et reprehenderit nostrum laudantium ratione quisquam. Laudantium quasi reiciendis cupiditate consequuntur expedita.</p>
            </div>
-          <Jets :showbutton="showbutton" />
+          <Jets :showbutton="!!showbutton" :airline="airline" />
          </div>
     </section>  
   <Consul />
