@@ -12,6 +12,9 @@
                 <li class="nav-item">
                   <RouterLink  class="nav-link text-light" to="/fleets">Airline Fleets</RouterLink>
                 </li>
+                <li class="nav-item">
+                  <RouterLink  class="nav-link text-light" to="/countries">Countries Destinations</RouterLink>
+                </li>
                 
             </ul>
         </div>

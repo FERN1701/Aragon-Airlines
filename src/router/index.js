@@ -6,6 +6,10 @@ import JetDescription from '../views/Jets/JetDescription.vue'
 import Admin from '../views/admin/AdminLayout.vue'
 import Dashboard from '../views/admin/Dashboard.vue'
 import Units from '../views/admin/Units.vue'
+import CountriesLayout from '../views/Countries/CountryLayout.vue'
+import Countries from '../views/Countries/Countries.vue'
+import CountryDescription from '../views/Countries/CountryDescription.vue'
+import Destinations from '../views/admin/Destinations.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -33,6 +37,24 @@ const router = createRouter({
       ]
     },
     {
+      path: '/countries',
+      name: 'countriesLayout',
+      component: CountriesLayout,
+      children: [
+        {
+          path: '',
+          name: 'countries',
+          component: Countries,
+        },
+        {
+          path: ':id/destinations',
+          name: 'countryDescription',
+          component: CountryDescription,
+        },
+      ]
+    },
+
+    {
       path: '/administrator',
       name: 'admin',
       component: Admin,
@@ -46,6 +68,11 @@ const router = createRouter({
         path: 'units', 
         name: 'units',
         component: Units,
+        },
+        {
+        path: 'destinations', 
+        name: 'destinations',
+        component: Destinations,
         },
       ]
     },

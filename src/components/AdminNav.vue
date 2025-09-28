@@ -15,6 +15,9 @@
                 <li class="nav-item" >
                   <RouterLink  class="nav-link text-light" to="/administrator/units">Units</RouterLink>
                 </li>
+                 <li class="nav-item" >
+                  <RouterLink  class="nav-link text-light" to="/administrator/destinations">Destinations</RouterLink>
+                </li>
             </ul>
         </div>
         
@@ -23,6 +26,7 @@
 </template>
 <script setup>
 import Dashboard from '@/views/admin/Dashboard.vue'
+import Units from '@/views/admin/Units.vue'
 </script>
 <style scoped>
 .nav-style {

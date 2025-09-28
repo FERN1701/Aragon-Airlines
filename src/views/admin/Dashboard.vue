@@ -9,10 +9,10 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-4">
-                                <h1>08</h1>
+                                <h1>{{airline.units.length}}</h1>
                             </div>
                             <div class="col-8">
-                                <h3>Airplanes</h3>
+                                <h3>Fleets</h3>
                             </div>
                         </div>
                     </div>
@@ -52,4 +52,6 @@
 </section>
 </template>
 <script setup>
+import { airlineStore } from '../../stores/control'
+const airline = airlineStore()
 </script>
