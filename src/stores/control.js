@@ -124,8 +124,6 @@ export const places = defineStore('places', () =>{
         saveEditCountry,
         getcountryID,
         updateCountry,
-        getCountry,
-
+        getCountry
     }
-
 })
